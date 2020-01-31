@@ -32,11 +32,13 @@ typedef struct	s_piece
 	char		where;
 }				t_piece;
 
-typedef struct	s_arr
+typedef struct	s_stacks
 {
-	int			*mass;
-	int			ptr;
-}				t_arr;
+	int			*arr_a;
+	int			ptr_a;
+	int			*arr_b;
+	int			ptr_b;
+}				t_stacks;
 
 /*
 **	fun1.c
@@ -45,8 +47,12 @@ void    ft_swap(int *a, int *b);
 int     ft_memcmp(const void *s1, const void *s2, size_t n);
 int     *sort_array(int *arr, int n);
 void	print_piece(t_piece pp);
-void	print_arr(int *a, int n);
+void	print_arr(t_stacks *st, int n, char c);
 void	set_arr_to_zero(int *b, int n);
+void	push_1_to_2(t_stacks *st, char c); //c == 'A' means pushes FROM A to B
+// void	rotate(t_arr *dest, int n);
+// void	reverse_rotate(t_arr *dest, int n);
+
 /*
 ** methods.c
 */
