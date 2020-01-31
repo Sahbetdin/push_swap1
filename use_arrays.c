@@ -15,13 +15,16 @@ a[16] = 4;		a[17] = 37;		a[18] = 42;		a[19] = 10;
 a[20] = 34;		a[21] = 12;		a[22] = 44;
 }
 
+void	push_1_to_2(int *arr1, int *arr2, int n)
+{
 
+}
 
 int	main()
 {
 	t_piece	all_charact[10];
-	int *arr_a;
-	int *arr_b;
+	t_arr	*arr_a;
+	t_arr	*arr_b;
 
 	int n;
 	int i;
@@ -29,15 +32,24 @@ int	main()
 	
 
 	n = 23;
-	arr_a = (int *)malloc(sizeof(int) * 23);
-	arr_b = (int *)malloc(sizeof(int) * 23);
-	set_array(arr_a);
-	set_arr_to_zero(arr_b, n);
-	print_arr(arr_a, n);
-	print_arr(arr_b, n);
+	arr_a = (t_arr *)malloc(sizeof(t_arr));
+	arr_a->mass = (int *)malloc(sizeof(int) * n);
+	set_array(arr_a->mass);
+	arr_a->ptr = 0;
+
+
+	arr_b = (t_arr *)malloc(sizeof(t_arr));
+	arr_b->mass = (int *)malloc(sizeof(int) * n);
+	set_arr_to_zero(arr_b->mass, n);
+
+	print_arr(arr_a->mass, n);
+	sort_array(arr_a->mass, n);
+	print_arr(arr_a->mass, n);
+	print_arr(arr_b->mass, n);
+
 
 //set 1st piece characteristic
-	all_charact[0].refer = arr_a;
+	all_charact[0].refer = arr_a->mass;
 	all_charact[0].begin = 0;
 	all_charact[0].end = n;
 	all_charact[0].amount = all_charact[0].end - all_charact[0].begin;
@@ -46,7 +58,14 @@ int	main()
 	// print_piece(all_charact[0]);
 
 //первая итерация переноса в b
-	
+	mid = arr_a->mass[n / 2];
+	printf("mid = %d\n", mid);
+	// i = 0;
+	// while (i < n)
+	// {
+	// 	if (arr_)
+	// 	i++;
+	// }
 
 
 	return (0);

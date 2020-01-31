@@ -31,12 +31,19 @@ typedef struct	s_piece
 	int			sorted;
 	char		where;
 }				t_piece;
+
+typedef struct	s_arr
+{
+	int			*mass;
+	int			ptr;
+}				t_arr;
+
 /*
 **	fun1.c
 */
 void    ft_swap(int *a, int *b);
 int     ft_memcmp(const void *s1, const void *s2, size_t n);
-int     *sort_array(int n, int *arr);
+int     *sort_array(int *arr, int n);
 void	print_piece(t_piece pp);
 void	print_arr(int *a, int n);
 void	set_arr_to_zero(int *b, int n);

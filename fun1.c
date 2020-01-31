@@ -30,7 +30,7 @@ int     ft_memcmp(const void *s1, const void *s2, size_t n)
 }
 
 
-int     *sort_array(int n, int *arr)
+int     *sort_array(int *arr, int n)
 {
 	int i;
 	int j;
